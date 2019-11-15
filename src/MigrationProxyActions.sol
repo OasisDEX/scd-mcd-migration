@@ -11,7 +11,7 @@ contract MigrationProxyActions is DSMath {
         address scdMcdMigration,            // Migration contract address
         uint wad                            // Amount to swap
     ) external {
-        GemLike sai = SaiTubLike(ScdMcdMigration(scdMcdMigration).tub()).sai();
+        GemLike sai = JoinLike(ScdMcdMigration(scdMcdMigration).saiJoin()).gem();
         GemLike dai = JoinLike(ScdMcdMigration(scdMcdMigration).daiJoin()).dai();
         sai.transferFrom(msg.sender, address(this), wad);
         if (sai.allowance(address(this), scdMcdMigration) < wad) {
@@ -25,7 +25,7 @@ contract MigrationProxyActions is DSMath {
         address scdMcdMigration,            // Migration contract address
         uint wad                            // Amount to swap
     ) external {
-        GemLike sai = SaiTubLike(ScdMcdMigration(scdMcdMigration).tub()).sai();
+        GemLike sai = JoinLike(ScdMcdMigration(scdMcdMigration).saiJoin()).gem();
         GemLike dai = JoinLike(ScdMcdMigration(scdMcdMigration).daiJoin()).dai();
         dai.transferFrom(msg.sender, address(this), wad);
         if (dai.allowance(address(this), scdMcdMigration) < wad) {

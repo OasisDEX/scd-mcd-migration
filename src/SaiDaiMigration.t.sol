@@ -7,7 +7,7 @@ import { AuthGemJoin } from "dss-deploy/join.sol";
 
 import { SaiDaiMigration } from "./SaiDaiMigration.sol";
 
-contract ScdMcdMigrationTest is DssDeployTestBase {
+contract SaiDaiMigrationTest is DssDeployTestBase {
     DSToken             sai;
     SaiDaiMigration     migration;
     AuthGemJoin         saiJoin;
